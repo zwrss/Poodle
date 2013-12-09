@@ -18,4 +18,10 @@ background-color: #428bca;
 border-color: #357ebd;
   }
 
-  
+  .modal-dialog{
+    max-width: 350px;
+}
+
+  .edit-dialog{
+    max-width: 355px;
+}
