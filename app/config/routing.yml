@@ -1,0 +1,8 @@
+test:
+    resource: "@TestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+poodle_user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
