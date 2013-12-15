@@ -18,7 +18,8 @@
         "sensio/distribution-bundle": "~2.3",
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "leafo/lessphp": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
@@ -48,5 +49,31 @@
         "branch-alias": {
             "dev-master": "2.4-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type":"package",
+            "package":{
+                "version":"master",
+                "name":"twitter/bootstrap",
+                "source":{
+                    "url":"https://github.com/twitter/bootstrap.git",
+                    "type":"git",
+                    "reference":"master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "version":"master",
+                "name":"networking/init-cms-bundle",
+                "source":{
+                    "url":"https://github.com/jkostrz/init-cms-bundle.git",
+                    "type":"git",
+                    "reference":"master"
+                }
+            }
+        }
+    ]
 }
