@@ -4,5 +4,5 @@ test:
 
 poodle_user:
     resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /user
 
