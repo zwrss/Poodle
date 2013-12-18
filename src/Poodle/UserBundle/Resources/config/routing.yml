@@ -6,3 +6,11 @@ user_homepage:
 user_login:
     pattern:  /login
     defaults: { _controller: UserBundle:User:login }
+    
+register_login:
+    pattern:  /register
+    defaults: { _controller: UserBundle:User:register }
+    
+recover_login:
+    pattern:  /recover
+    defaults: { _controller: UserBundle:User:recover }
