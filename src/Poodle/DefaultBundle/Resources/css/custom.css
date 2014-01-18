@@ -26,7 +26,15 @@ border-color: #357ebd;
     max-width: 355px;
 }
 
+.questions{
+    margin-top:10px;
+}
 
+.btn-default.active{
+color: #fff;
+background-color: #5cb85c;
+border-color: #4cae4c;
+}
 
 
 
