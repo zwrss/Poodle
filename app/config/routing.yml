@@ -4,7 +4,7 @@ default:
 
 test:
     resource: "@TestBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /test
 
 poodle_user:
     resource: "@UserBundle/Resources/config/routing.yml"

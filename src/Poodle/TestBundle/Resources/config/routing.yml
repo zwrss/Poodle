@@ -1,3 +1,44 @@
-test_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: TestBundle:Default:index }
+test_exam:
+    pattern:  /exam
+    defaults: { _controller: TestBundle:Exam:index }
+    
+test_exam_new:
+    pattern:  /exam/new
+    defaults: { _controller: TestBundle:Exam:new }
+
+test_exam_create:
+    pattern:  /exam/create
+    defaults: { _controller: TestBundle:Exam:create }
+    
+test_exam_show:
+    pattern:  /exam/show/{id}
+    defaults: { _controller: "TestBundle:Exam:show" }
+    requirements:
+        id: \d+
+
+test_exam_edit:
+    pattern:  /exam/edit/{id}
+    defaults: { _controller: "TestBundle:Exam:edit" }
+    requirements:
+        id: \d+
+        
+test_exam_update:
+    pattern:  /exam/update/{id}
+    defaults: { _controller: "TestBundle:Exam:update" }
+    requirements:
+        id: \d+       
+       
+test_exam_delete:
+    pattern:  /exam/delete/{id}
+    defaults: { _controller: "TestBundle:Exam:delete" }
+    requirements:
+        id: \d+
+        
+
+
+test_exam_add_question:
+    pattern:  /exam/addquestion/{examId}
+    defaults: { _controller: "TestBundle:Exam:addQuestion" }
+    requirements:
+        examId: \d+
+        

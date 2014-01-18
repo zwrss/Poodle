@@ -1,0 +1,7 @@
+parameters:
+#    study.example.class: Poodle\StudyBundle\Example
+
+services:
+#    study.example:
+#        class: %study.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

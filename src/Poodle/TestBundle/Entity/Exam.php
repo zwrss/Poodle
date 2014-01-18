@@ -1,0 +1,126 @@
+<?php
+
+namespace Poodle\TestBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Exam
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Exam
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Question", mappedBy="exam")
+     */
+    private $questions;
+
+
+    public function __construct()
+    {
+        $this->questions = new ArrayCollection();
+    }    
+    
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Exam
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+    
+    
+    
+
+    /**
+     * Set questions
+     *
+     * @param \Poodle\TestBundle\Entity\Question $questions
+     * @return Exam
+     */
+    public function setQuestions(\Poodle\TestBundle\Entity\Question $questions = null)
+    {
+        $this->questions = $questions;
+
+        return $this;
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Poodle\TestBundle\Entity\Question 
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
+    }
+
+    /**
+     * Add questions
+     *
+     * @param \Poodle\TestBundle\Entity\Question $questions
+     * @return Exam
+     */
+    public function addQuestion(\Poodle\TestBundle\Entity\Question $questions)
+    {
+        $this->questions[] = $questions;
+
+        return $this;
+    }
+
+    /**
+     * Remove questions
+     *
+     * @param \Poodle\TestBundle\Entity\Question $questions
+     */
+    public function removeQuestion(\Poodle\TestBundle\Entity\Question $questions)
+    {
+        $this->questions->removeElement($questions);
+    }
+}
