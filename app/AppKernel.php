@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Poodle\UserBundle\UserBundle(),
             new Poodle\DefaultBundle\DefaultBundle(),
             new Poodle\StudyBundle\StudyBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
