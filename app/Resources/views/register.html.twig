@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="container">
+  <div class="row">
+
+    <div class="main">
+
+      <h3>Rejestracja</a></h3>
+     
+      <form role="form">
+
+         <div class="form-group">
+          <label for="name">Imię</label>
+           <input type="text" class="form-control" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nazwisko</label>
+           <input type="text" class="form-control" id="name" required>
+        </div>
+
+         <div class="form-group">
+          <label for="number">Numer indeksu</label>
+           <input type="number" class="form-control" id="number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputUsernameEmail">Adres email</label>
+           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wpisz adres email" required>
+        </div>
+
+
+        <div class="form-group">
+        <label for="exampleInputPassword1">Hasło</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło minimum 8 znaków" required>
+        </div>
+
+        
+     
+
+
+        <button type="submit" class="btn btn btn-primary">
+          Załóż konto
+        </button>
+      </form>
+
+      <div class="test">
+        
+
+
+      </div>
+    
+    </div>
+    
+  </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/pws.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+"use strict";
+var options = {
+minChar: 8,
+bootstrap3: true,
+};
+$(':password').pwstrength(options);
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+        
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="container">
+  <div class="row">
+
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="#">Nowy test</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Testy<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="glyphicon glyphicon-plus-sign"></i> Nowy test</a></li>
+          <li><a href="test-page.html"><i class="glyphicon glyphicon-list"></i> Lista testów</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Wersje robocze</a></li>
+        </ul>
+      </li>
+    </ul>
+
+       <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Studenci<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li> <a href="#"><i class="glyphicon glyphicon-list"></i> Lista studentów</a></li>
+           <li><a href="#"><i class="glyphicon glyphicon-calendar"></i> Dziennik obecności</a></li>
+          <li> <a href="#"><i class="glyphicon glyphicon-signal"></i> Oceny</a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+  
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> promanski <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Ustawienia</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="glyphicon glyphicon-log-out"></i> Wyloguj</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+  </div>
+
+<!-- ####################
+KREATOR NOWEGO TESTU
+#################### -->
+
+  <div class="row">
+
+    <div class="col-md-5 col-sm-5 col-xs-12">
+
+    <h4><i class="glyphicon glyphicon-wrench"></i> Kreator nowego testu</h4>
+    <div class="alert alert-info">Uzupełnij wszystkie pola</div>
+    <hr/>
+     <form role="form">
+      <div class="form-group">
+        <label for="testName">Nazwa testu</label>
+        <input type="text" class="form-control" id="testName" placeholder="Wpisz nazwę testu">
+      </div>
+
+       
+
+
+      
+        <label for="testType">Przedmiot</label>
+      <div class="form-group" data-toggle="buttons">
+        <label class="btn btn-default **active**">
+        <input type="radio" name="subject" id="oww" value="oww" checked>OWW </label>
+        <label class="btn btn-default">
+        <input type="radio" name="subject" id="prir" value="prir"> PRIR</label>
+        <label class="btn btn-default">
+        <input type="radio" name="subject" id="mpd" value="mpd"> MPD </label>
+      </div>
+
+    </div>
+  </div>
+<hr/>
+
+  <!-- Ustawienia testu -->
+    <div class="row">
+
+     <div class="col-md-4 col-sm-4 col-xs-12">
+      
+        <div class="form-group input-group questions">
+         <label for="closedQuestion">Ilość pytań zamkniętych</label>
+          <input type="number" class="form-control" id="closedQuestion" placeholder="">
+        </div>
+        <div class="form-group input-group questions">
+         <label for="openedQuestion">Ilość pytań otwartych</label>
+          <input type="number" class="form-control" value="oQuestions"id="openedQuestion" placeholder="">
+        </div>
+    </div>
+
+      <div class="col-md-5 col-sm-5 col-xs-12">
+         <div class="form-group input-group questions">
+            <label for="closedQuestion">Czas trwania testu (godziny : minuty) </label>
+            <input type="time" class="form-control" id="closedQuestion" placeholder="">
+         </div>
+      </div>
+
+
+    </div>
+<hr/>
+    <!-- Test zamkniety -->
+        <div class="row">
+        <h4><i class="glyphicon glyphicon-cog"></i> Ustawienia testu zamkniętego</h4>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+         
+
+         <div class="form-group input-group questions">
+          <label for="positivePoints">Ilość punktów za <b class="text-success">poprawną</b> odpowiedź </label>
+          <input type="number" class="form-control" id="positivePoints" placeholder="">
+        </div>
+
+        <div class="form-group input-group questions">
+          <label for="negativePoints">Ilość punktów za <b class="text-danger">niepoprawną</b> odpowiedź </label>
+          <input type="number" class="form-control" id="negativePoints" placeholder="">
+        </div>
+
+
+        <div class="form-group input-group questions">
+          <label for="multiQuestionNumber">Ilość pytań <b class="text-info">wielokrotnego</b> wyboru </label>
+          <input type="number" class="form-control" id="multiQuestionNumber" placeholder="">
+        </div>
+
+         <div class="form-group input-group questions">
+          <label for="singleQuestionNumber">Ilość pytań z <b class="text-info">jedną</b> prawidłową odpowiedzią </label>
+          <input type="number" class="form-control" id="singleQuestionNumber" placeholder="">
+        </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group input-group questions">
+          <label for="answerQuantity">Ilość odpowiedzi w pytaniu</label>
+          <input type="number" class="form-control" id="answerQuantity" value="4" placeholder="">
+        </div>
+        </div>
+
+        </div>
+
+<button type="submit" class="btn btn-info">Dalej</button>
+</form>
+
+
+
+<!-- OKIENKO ALERT DO POTWIERDZENIA USUWANIA -->
+<div class="modal fade" id="deleteQuestion" tabindex="-1" role="dialog" aria-labelledby="deleteQuestionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="deleteQuestionLabel"><i class="glyphicon glyphicon-trash"> </i> Usuń test</h4>
+      </div>
+      <div class="modal-body">
+      Czy chcesz usunąć <b>(nazwa_testu)</b> z przedmiotu <b>(nazwa_przedmiotu)</b> ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"> </i> Usuń</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Anuluj</button>
+       
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- OKIENKO ALERT DO POTWIERDZENIA EDYCJI -->
+<div class="modal fade" id="editQuestion" tabindex="-1" role="dialog" aria-labelledby="editQuestionLabel" aria-hidden="true">
+  <div class="modal-dialog edit-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="editQuestionLabel"><i class="glyphicon glyphicon-pencil"> </i> Szybka edycja</h4>
+      </div>
+      <div class="modal-body">
+      <h4>Co chcesz edytować ?</h4>
+   
+     <button type="button" class="btn btn-success"><i class="glyphicon glyphicon-th-list"></i> Właściwości testu</button>
+     <button type="button" class="btn btn-success"><i class="glyphicon glyphicon-user"></i> Dopisani studenci</button>
+     
+      </div>
+      
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="glyphicon glyphicon-share-alt"></i> Powrót</button>
+       
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/pws.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+"use strict";
+var options = {
+minChar: 8,
+bootstrap3: true,
+};
+$(':password').pwstrength(options);
+});
+</script>
+  </body>
+</html>
