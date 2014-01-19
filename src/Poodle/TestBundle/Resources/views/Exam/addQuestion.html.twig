@@ -1,1 +1,44 @@
 Dodaj pytanie do egzaminu: {{ entity.title }}
+
+{{ form(form) }}
+
+<br/><br/>
+Dodaj odpowiedzi:
+
+ <ul id="answer-fields-list" data-prototype="{{ form_widget(form.answers.vars.prototype) | e }}">
+    {% for answerField in form.answers %}
+        <li>
+            {{ form_errors(answerField) }}
+            {{ form_widget(answerField) }}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="#" id="add-another-answer">Add another answer</a>
+
+
+
+<script type="text/javascript">
+    // keep track of how many answer fields have been rendered
+    var answerCount = '{{ form.answers | length }}';
+
+    jQuery(document).ready(function() {
+        jQuery('#add-another-answer').click(function() {
+            var answerList = jQuery('#answer-fields-list');
+
+            // grab the prototype template
+            var newWidget = answerList.attr('data-prototype');
+            // replace the "__name__" used in the id and name of the prototype
+            // with a number that's unique to your answers
+            // end name attribute looks like name="contact[answers][2]"
+            newWidget = newWidget.replace(/__name__/g, answerCount);
+            answerCount++;
+
+            // create a new list element and add it to the list
+            var newLi = jQuery('<li></li>').html(newWidget);
+            newLi.appendTo(jQuery('#answer-fields-list'));
+
+            return false;
+        });
+    })
+</script>

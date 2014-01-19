@@ -259,28 +259,80 @@ class ExamController extends Controller {
      * 
      */
     
-    public function addQuestionAction($examId)
+    public function addQuestionAction(Request $request, $examId)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TestBundle:Exam')->find($examId);
+        $exam = $em->getRepository('TestBundle:Exam')->find($examId);
 
-        if (!$entity) {
+        if (!$exam) {
             throw $this->createNotFoundException('Unable to find Exam entity.');
         }
-        
-        $form = $this->createFormBuilder(new Question(), array(
-            'action' => $this->generateUrl('test_exam_update', array('id' => $entity->getId())),
+        $question  = new Question();
+        $question->setExam($exam);
+        $form = $this-> createFormBuilder($question, array(
+            'action' => $this->generateUrl('test_exam_add_question', array('examId' => $exam->getId())),
             'method' => 'PUT',
-        ))
+        )) 
                 ->getForm();
         
+       
+        $form->add('body', 'text', array('label' => 'Pytanie'));
+        
+        $form->add('qType', 'choice', array(
+            'choices'   => array(
+                    'OPEN'   => 'odpowiedź otwarta',
+                    'ONE' => 'Jednokrotnego wyboru',
+                    'MULTIPLY'   => 'Wielokrotnego wyboru',
+                ),
+                'multiple'  => false,
+                'required' => true,
+                'preferred_choices' => array('OPEN')
+        ));
+
+        $form->add('answers', 'collection', array(
+            'type'   => 'test',
+            'options'  => array(
+                'required'  => false
+            ),
+        ));
+        
+        $form->add('submit', 'submit', array('label' => 'Dodaj'));
+        
+
+        $form->handleRequest($request);
+        
+        if($form->isValid())
+        {
+           $em = $this->getDoctrine()->getManager();
+            $em->persist($question);
+            $em->flush(); 
+            
+            return $this->redirect($this->generateUrl('test_exam_edit', array('id' => $examId)));
+        }
+
         
         return $this->render(
-                        'TestBundle:Exam:addQuestion.html.twig', array(
-                    'entity' => $entity,
-                            'form' => $form->createView()
+                'TestBundle:Exam:addQuestion.html.twig', array(
+                'entity' => $exam,
+                'form' => $form->createView()
         ));
+        
+    }
+    
+    
+    
+    /**
+     * 
+     * 
+     * 
+     * Odpowiedzi
+     * 
+     * 
+     * 
+     */
+    public function addAnswerToQuestionAction(Request $request, $questionId)
+    {
         
     }
 

@@ -3,6 +3,7 @@
 namespace Poodle\TestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Question
@@ -33,8 +34,27 @@ class Question
      * @ORM\Column(name="body", type="string", length=255)
      */
     private $body;
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="qType", type="string", length=50, nullable=true)
+     */
+    private $qType;
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Answer", mappedBy="question")
+     */
+    private $answers;
 
 
+    
+    public function __construct()
+    {
+        $this->answers = new ArrayCollection();
+    }        
+    
     /**
      * Get id
      *
@@ -89,5 +109,84 @@ class Question
     public function getBody()
     {
         return $this->body;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Question
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set qType
+     *
+     * @param string $qType
+     * @return Question
+     */
+    public function setQType($qType)
+    {
+        $this->qType = $qType;
+
+        return $this;
+    }
+
+    /**
+     * Get qType
+     *
+     * @return string 
+     */
+    public function getQType()
+    {
+        return $this->qType;
+    }
+
+    /**
+     * Add answers
+     *
+     * @param \Poodle\TestBundle\Entity\Answer $answers
+     * @return Question
+     */
+    public function addAnswer(\Poodle\TestBundle\Entity\Answer $answers)
+    {
+        $this->answers[] = $answers;
+
+        return $this;
+    }
+
+    /**
+     * Remove answers
+     *
+     * @param \Poodle\TestBundle\Entity\Answer $answers
+     */
+    public function removeAnswer(\Poodle\TestBundle\Entity\Answer $answers)
+    {
+        $this->answers->removeElement($answers);
+    }
+
+    /**
+     * Get answers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAnswers()
+    {
+        return $this->answers;
     }
 }

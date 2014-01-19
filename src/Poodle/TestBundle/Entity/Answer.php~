@@ -22,9 +22,8 @@ class Answer
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="question", type="integer")
+     * @ORM\ManyToOne(targetEntity="Question", inversedBy="answers")
+     * @ORM\JoinColumn(name="question_id", referencedColumnName="id")
      */
     private $question;
 

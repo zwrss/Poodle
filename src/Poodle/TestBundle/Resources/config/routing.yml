@@ -42,3 +42,11 @@ test_exam_add_question:
     requirements:
         examId: \d+
         
+        
+
+test_exam_add_answer:
+    pattern:  /exam/addanswer/{questionId}
+    defaults: { _controller: "TestBundle:Exam:addAnswer" }
+    requirements:
+        examId: \d+
+        
