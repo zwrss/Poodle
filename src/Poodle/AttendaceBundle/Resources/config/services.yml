@@ -1,0 +1,7 @@
+parameters:
+#    poodle_attendace.example.class: Poodle\AttendaceBundle\Example
+
+services:
+#    poodle_attendace.example:
+#        class: %poodle_attendace.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
